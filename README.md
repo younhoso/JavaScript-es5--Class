@@ -23,5 +23,5 @@ prototype vs proto 설명
 ![alt text](http://www.triplexlab.co.kr/images/2.png)
 
 
-
+생성자 함수를 통한 상속 : 부모와 연결하기
 ![alt text](http://www.triplexlab.co.kr/images/1.png)
