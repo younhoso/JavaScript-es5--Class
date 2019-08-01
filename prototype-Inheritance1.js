@@ -5,7 +5,7 @@ var subObj = {  //subObj를 즉 객체를 superObj 자식으로 만들어버릴�
     subVal: 'sub'
 }
 
-subObj.__proto__ = superObj; // 자식object.__proto__ =부모object는 subObj를 superObj자식으로 만드는 방법
+subObj.__proto__ = superObj; // 자식object.__proto__ =부모object는 subObj를 superObj자식으로 만드는 방법 (object 끼리 상속)
 console.log('subObj.subVal=>',subObj.subVal);
 console.log('subObj.superVal=>',subObj.superVal);
 
