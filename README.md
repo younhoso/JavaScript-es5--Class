@@ -20,4 +20,4 @@ prototype vs proto 설명
 12. kim.sum()을 실행하면 kim객체안에 sum이라는 메서드를 찾고 없다면 __proto__를통해서 Person's prototype(초록색 박스)에 sum이라느 메서드를 찾는다. 
 있다면 출력한다.
 
-![alt text](http://www.triplexlab.co.kr/images/prototype-vs-proto.png)
+![alt text](http://gofile.me/4BHto/GPdIZXEvi)
