@@ -21,7 +21,7 @@ var kim = {
         return this.first + this.second;
     }
 }
-// __proto__를 개선한 자바스크립트 표준 문법  Object.create
+//__proto__를 개선한 자바스크립트 표준 문법  Object.create
 var lee = Object.create(kim);   //var 자식object = Object.create(부모object)  (object 끼리 상속)
 lee.name = 'lee';
 lee.first = 10;
