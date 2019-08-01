@@ -15,7 +15,7 @@ function PersonPlus(name, first, second ,third) {
 }
 //PersonPlus.prototype.__proto__ = Person.prototype;
 PersonPlus.prototype = Object.create(Person.prototype); //PersonPlus.prototype 객체를 Person.prototype 객체에 연결해준다.
-PersonPlus.prototype.constructor = PersonPlus;  //PersonPlus의 constructor는 PersonPlus 입니다.라고 지정한다.
+PersonPlus.prototype.constructor = PersonPlus;  //constructor는 앞에 나온 객체의 주체가 뭐냐?? 라고 물어보는것 같다. (객체의 PersonPlus의 constructor는 PersonPlus 입니다.라고 지정한다.)
 
 PersonPlus.prototype.avg = function() {
     return (this.first + this.second + this.third) / 3;
