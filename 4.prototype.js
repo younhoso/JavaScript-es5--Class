@@ -5,7 +5,7 @@ var Person = function(name, age, second, third){
     this.second = second;
     this.third = third;
 }
-Person.prototype.sum = function(){  //prototype은 Person 클래스 내부에서 공통으로 사용할 sum 메서드 만들기
+Person.prototype.sum = function(){  //Person.prototype는 새로운 객체를 만들고 내부에서 공통으로 사용할 sum 메서드 만들다.
     return 'prototype:'+(this.age + this.second + this.third);
 }
 
