@@ -18,5 +18,5 @@ sum.call(kim); //sum.call(kim);는 즉 sum();이거와 같다.
 console.log("sum.call(kim)", sum.call(kim, 'this'));    //sum 함수 호출하는데 call('this는 kim였으면 좋겠고', 'this') 매개변수를 추가할게
 console.log("sum.call(lee)", sum.call(lee, ':'));       //sum 함수 호출하는데 call('this는 lee였으면 좋겠고', ':') 매개변수를 추가할게
 
-// lee.__proto__ = kim
-// var lee = Object.create(kim);
+var kimSum = sum.bind(kim, '-> ');  //bind는 밖에서 취지에 맞에 달라진 새로운 함수가 리턴만 해준다. 즉 sum 함수 원본에는 영향을 주지 않는다. 
+console.log('kimSum()', kimSum());  // 리턴하는 것을 실행한다.
