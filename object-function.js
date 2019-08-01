@@ -1,3 +1,5 @@
+// **혼자 잘 지네고 있던 함수를 필요에 따라서 내가 원하는 객체에 추가로 메소드로 만들수 있다.**
+
 var kim = {
     name: 'kim',
     first: 10,
@@ -8,7 +10,7 @@ var lee = {
     first: 20,
     second: 30,
 }
-function sum(prefix) {
+function sum(prefix) {  // 혼자 잘 지네고 있던 함수를 필요에 따라서 내가 원하는 객체에 추가로 메소드로 만들수 있다.
     return prefix + (this.first + this.second);
 }
 
