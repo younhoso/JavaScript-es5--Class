@@ -17,9 +17,9 @@ class PersonPlus extends Person{    //extends(확장하다.)를 통해서 부모
         this.third = third;
     }
     sum(){  //클래스 내부에 있는 공통메서드 
-        return super.sum() + this.name + this.third;    //super.sum()는 부모클래스에 메서드를 호출하는것
+        return super.sum() + this.name + this.third;    //super.sum()는 부모클래스에 메서드를 호출하므로서 재사용하는것
     }
-    avg(){
+    avg(){      //avg는 부모클레스에는 없었던 자식클래스(PersonPlus)에 추가된 메서드이다.
         return (this.first + this.second) / 2;
     }
 }
