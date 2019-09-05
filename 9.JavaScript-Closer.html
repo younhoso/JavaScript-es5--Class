@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript 슬라이드 이미지</title>
+    <style>
+        html,body,div,ul,li,a,img {margin : 0; padding: 0;}
+        ul li {list-style: none;}
+    </style>
+</head>
+<body>
+    <h1 class="index"></h1>
+    <h2 class="tit"></h2>
+    
+    <div class="viewport">
+        <ul>
+            <li data-tit="A"><a href="#0"><img src="/img/a.jpg" alt="이미지"></a></li>
+            <li data-tit="B"><a href="#0"><img src="/img/b.jpg" alt="이미지"></a></li>
+            <li data-tit="C"><a href="#0"><img src="/img/a.jpg" alt="이미지"></a></li>
+            <li data-tit="D"><a href="#0"><img src="/img/b.jpg" alt="이미지"></a></li>
+        </ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script>
+        $(function(){
+            var lengths = $('.viewport li').length,
+                width = 880,
+                height = 575,
+                currentIndex = 0;
+            
+            $('.viewport').css({ width: width, height: height, overflow: 'hidden'})
+            $('.viewport ul').css({ 'width': width * lengths });
+            $('.viewport li').css({ width: width, height: height, float: 'left'})
+
+            var moveTo = function(index){
+                // if(!index){index = 0}    index값이 없다면 0으로 초기화 하라는 기능 (이 조건을 아래 조건식으로 개선했다.)
+                index = index || 0          // 짧은 조건문
+                index = index % lengths     // 이미지 객수만큼 다 돌면 0으로 초기화 한다.
+                
+                $('.viewport ul').css({
+                    'transition' : 'all 0.5s',
+                    'transform' : "translateX("+ -width * index +"px)"
+                })
+            }
+            /**
+            for(let i = 0; i < lengths; i++){   //클로저 문제 let으로 해결 (let은 ES6문법이다.) 방법1)
+                $('<button></button>').text(i).click(function() {
+                     moveTo(i);
+                     var title = $($('.viewport li').get(i)).attr('data-tit');
+                     $('.tit').html(title);
+                     $('.index').html(i);
+                }).appendTo('body')
+            }
+            */
+            for(var i = 0; i < lengths; i++){   // 클로저 문제 해결 (ES6문법을 사용 못할경우 지금과 같이 해결한다.) 방법2)
+                (function(i){                   // 즉시실행하는 함수
+                    $('<button></button>').text(i).click(function() {
+                        moveTo(i);
+                        var title = $($('.viewport li').get(i)).attr('data-tit');
+                        $('.tit').html(title);
+                        $('.index').html('0'+ (i + 1));
+                        currentIndex = i;
+                    }).appendTo('body')
+                })(i)
+            };
+
+            
+            setInterval(function () {
+                currentIndex += 1
+                moveTo(currentIndex);
+            },1000 * 1.5);
+
+        });
+    </script>
+</body>
+</html>
